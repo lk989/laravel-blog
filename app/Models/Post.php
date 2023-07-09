@@ -24,7 +24,7 @@ class Post
     }
 
     public static function all(){
-        return cache()->remember('posts.all', function(){
+        return cache()->rememberForever('posts.all', function(){
             return collect(File::files(resource_path('posts')))
                 ->map(fn($file) => YamlFrontMatter::parseFile($file))
                 ->map(fn($document) => new Post(
