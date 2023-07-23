@@ -17,15 +17,28 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('posts', [
+//         'posts' => Post::all()
+//     ]);
+// });
+
 Route::get('/', function () {
-    return view('posts', [
-        'posts' => Post::all()
-    ]);
+    return view('welcome');
 });
 
-Route::get('posts/{post}', function($slug){
+Route::get('posts/{post}', function($id){
     return view('post', [
-        'post' => Post::findOrFail($slug)
+        'post' => Post::findOrFail($id)
     ]);
 
+});
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware(['auth', 'isadmin'])->group(function(){
+    Route::get('/welcome', function () {
+        return view('welcome');
+    });
 });
