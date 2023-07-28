@@ -6,19 +6,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-class LogoutController extends Controller
+class UserController extends Controller
 {
     /**
-     * Log out account user.
+     * The attributes that are mass assignable.
      *
-     * @return \Illuminate\Routing\Redirector
+     * @var array
      */
-    public function perform()
+    public function index()
     {
-        Session::flush();
-        
-        Auth::logout();
+        return view('users');
+    }
 
-        return redirect('login');
+    public function logout(Request $request) {
+        Auth::logout();
+        return redirect('/login');
     }
 }
