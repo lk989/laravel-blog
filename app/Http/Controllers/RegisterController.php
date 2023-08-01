@@ -15,12 +15,16 @@ class RegisterController extends Controller
     public function store()
     {
         // var_dump(request()->all());
-        User::create(request()->validate([
+        $user = User::create(request()->validate([
             'name' => ['required', 'max:255'],
             'username' => ['required', 'unique:users', 'min:3', 'max:255'],
             'email' => ['required', 'max:255', 'unique:users'],
             'password' => ['required', 'max:255', 'min:7'],
         ]));
+
+
+        //login
+        auth()->login($user);
 
         // session()->flash('success', 'Your account has been created successfully');
 
