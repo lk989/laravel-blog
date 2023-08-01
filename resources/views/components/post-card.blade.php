@@ -13,7 +13,7 @@
 
                 <div class="mt-4">
                     <a href="/posts/{{$post->slug}}">
-                        <h1 class="text-3xl">
+                        <h1 class="text-3xl text-justify">
                             {{$post->title}}
                         </h1>
                     </a>
@@ -24,7 +24,7 @@
                 </div>
             </header>
 
-            <div class="text-sm mt-4 space-y-4">
+            <div class="text-sm mt-4 space-y-4 text-justify">
                     {!! $post->excerpt !!}
             </div>
 
@@ -37,7 +37,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
                     <a href="#"
                         class="transition-colors duration-300 text-xs font-semibold bg-gray-200 hover:bg-gray-300 rounded-full py-2 px-8">

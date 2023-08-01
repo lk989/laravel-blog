@@ -38,17 +38,22 @@
                         <x-category-button :category="$post->category"/>
                     </div>
 
-                    <h1 class="font-bold text-3xl lg:text-4xl mb-10">
+                    <h1 class="font-bold text-3xl lg:text-4xl mb-10 text-justify">
                         {{$post->title}}
                     </h1>
 
-                    <div class="space-y-4 lg:text-lg leading-loose"> 
-                        <p>{{$post->body}}</p>  
-                    </div> 
-                </div> 
-            </article> 
-        </main> 
-  
-    </section> 
+                    <div class="space-y-4 lg:text-lg leading-loose text-justify">
+                        <p>{!! $post->body !!}</p>
+                    </div>
+                </div>
+
+                <section class="col-span-8 col-start-5 mt-10 space-y-6">
+                    <x-post-comment/>
+                    <x-post-comment/>
+                </section>
+            </article>
+        </main>
+
+    </section>
 
 </x-layout>
