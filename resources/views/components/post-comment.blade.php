@@ -7,7 +7,7 @@
         </div>
         <div>
             <h3 class="font-bold text-md">{{$comment->author->name}}</h3>
-            <p class="text-xs text-gray-400">Posted <time>{{$comment->created_at->diffForHumans()}}</time></p>
+            <p class="text-xs text-gray-400">Posted <time>{{$comment->created_at->format('F j, Y, g:i a')}}</time></p>
             <p class="text-s mt-4 text-justify">{{$comment->body}}</p>
         </div>
     </article>
