@@ -21,6 +21,23 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('home');
 
+Route::get('ping', function() {
+    $mailchimp = new \MailchimpMarketing\ApiClient();
+
+    $mailchimp->setConfig([
+        'apiKey' => config('services.mailchump.key'),
+        'server' => 'us21'
+    ]);
+
+    $response = $mailchimp->lists->addListMember("3c0441a396", [
+        "email_address" => "lmoosh01@gmail.com",
+        "status" => "subscribed",
+    ]);
+
+    dd($response);
+
+});
+
 Route::get('posts/{post}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}/comments', [PostCommentsController::class, 'store']);
 
