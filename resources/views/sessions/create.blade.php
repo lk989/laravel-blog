@@ -1,51 +1,18 @@
 <x-layout>
     <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10 border border-gray-200 bg-gray-100 rounded-xl p-8">
-            <h1 class="text-xl font-bold text-center">Register!</h1>
-            <form method="POST" action="/login" class="mt-10">
-                @csrf
+        <main class="max-w-lg mx-auto mt-10">
+            <x-panel>
 
-                <div class="mb-6">
-                    <label class="block mb-2 text-xs font-bold text-gray-700 uppercase"
-                           for="email">
-                        Email
-                    </label>
-                    <input class="w-full p-2 border border-gray-400 rounded"
-                           type="email"
-                           id="email"
-                           name="email"
-                           placeholder="Email Address"
-                           required
-                           value="{{old('email')}}">
+                <h1 class="text-xl font-bold text-center">Login!</h1>
+                <form method="POST" action="/login" class="mt-10">
+                    @csrf
 
-                    @error('email')
-                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
-                    @enderror
-                </div>
+                    <x-form.input name="email" type="email" autocomplete="username"/>
+                    <x-form.input name="password" type="password" autocomplete="new-password"/>
 
-                <div class="mb-6">
-                    <label class="block mb-2 text-xs font-bold text-gray-700 uppercase"
-                           for="password">
-                        Password
-                    </label>
-                    <input class="w-full p-2 border border-gray-400 rounded"
-                           type="password"
-                           id="password"
-                           name="password"
-                           placeholder="********"
-                           required>
-                    @error('password')
-                        <p class="text-red-500 text-xs italic">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="mb-6">
-                    <button type="submit"
-                            class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
-                        Submit
-                    </button>
-                </div>
-            </form>
+                    <x-form.button>Login</x-form.button>
+                </form>
+            </x-panel>
         </main>
     </section>
 </x-layout>
