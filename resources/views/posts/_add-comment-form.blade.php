@@ -8,14 +8,12 @@
             </header>
             <div class="mt-6">
                 <textarea name="body" class="w-full text-sm focus:outline-none focus:ring" cols="30" rows="5" placeholder="Quick, think of something you want to say" required></textarea>
-                @error('body')
-                    <span class="text-red-500 text-xs">{{$message}}</span>
-                @enderror
+                <x-form.error name='body'/>
             </div>
             <div class="flex justify-end mt-6 border-t border-gray-200 pt-6">
-                <x-submit-button>
+                <x-form.button>
                     Post
-                </x-submit-button>
+                </x-form.button>
             </div>
         </form>
     </x-panel>
