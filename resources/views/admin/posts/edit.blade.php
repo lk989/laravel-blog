@@ -1,8 +1,8 @@
 <x-layout>
     <x-setting :heading="'Edit post: ' . $post->title">
-        <form method="POST" action="/admin/posts/{{$post->id}}" enctype="multipart/form-data">
-                @csrf
-                @method('PATCH')
+        <form method="POST" action="/admin/posts/{{ $post->id }}" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
 
                 <x-form.input name="title" :value="old('title', $post->title)" />
                 <x-form.input name="slug" :value="old('slug', $post->slug)" />

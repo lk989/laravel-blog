@@ -34,7 +34,7 @@ Route::middleware('can:admin')->group(function () {
     Route::get('admin/posts/{post:id}/edit', [AdminPostController::class, 'edit']);
     Route::get('admin/posts/create', [AdminPostController::class, 'create']);
     Route::post('admin/posts', [AdminPostController::class, 'store']);
-    Route::patch('admin/posts/{post:id}', [AdminPostController::class, 'update']);
+    Route::put('admin/posts/{post:id}', [AdminPostController::class, 'update']);
     Route::delete('admin/posts/{post:id}', [AdminPostController::class, 'destroy']);
 });
 
