@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use \App\Models\User;
+use \App\Models\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,12 +16,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = \App\Models\User::factory()->create([
-            'name' => 'Lama Bugis'
-        ]);
+        $users = [
+            ['name' => 'user1', 'username' => 'user1', 'password' => 'user', 'email' => 'user1@user.com'],
+            ['name' => 'user2', 'username' => 'user2', 'password' => 'user', 'email' => 'user2@user.com'],
+        ];
 
-        \App\Models\Post::factory(5)->create([
-            'user_id' => $user->id
-        ]);
+        foreach ($users as $user) {
+            $newUser = User::create($user);
+        }
+        
+        $writers = [
+            ['name' => 'writer1', 'username' => 'writer1', 'password' => 'writer', 'email' => 'writer1@writer.com'],
+            ['name' => 'writer2', 'username' => 'writer2', 'password' => 'writer', 'email' => 'writer2@writer.com'],
+        ];
+
+        foreach ($writers as $writer) {
+            $newWriter = User::create($writer);
+            Post::factory(10)->create([
+                'user_id' => $newWriter->id
+            ]);
+        }
+
+        $this->call(AdminSeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }

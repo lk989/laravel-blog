@@ -56,6 +56,7 @@
                     @endforeach
                 </section>
             </article>
+            <p><a href="/generate-pdf">Generate PDF</a></p>
         </main>
     </section>
 </x-layout>
