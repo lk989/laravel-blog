@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
         foreach ($users as $user) {
             $newUser = User::create($user);
         }
-        
+
         $writers = [
             ['name' => 'writer1', 'username' => 'writer1', 'password' => 'writer', 'email' => 'writer1@writer.com'],
             ['name' => 'writer2', 'username' => 'writer2', 'password' => 'writer', 'email' => 'writer2@writer.com'],
@@ -32,12 +32,12 @@ class DatabaseSeeder extends Seeder
 
         foreach ($writers as $writer) {
             $newWriter = User::create($writer);
-            Post::factory(10)->create([
+            Post::factory(5)->create([
                 'user_id' => $newWriter->id
             ]);
         }
 
-        $this->call(AdminSeeder::class);
         $this->call(RoleSeeder::class);
+        $this->call(AdminSeeder::class);
     }
 }

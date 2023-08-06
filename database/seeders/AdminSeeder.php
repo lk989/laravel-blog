@@ -18,6 +18,6 @@ class AdminSeeder extends Seeder
             'username' => 'admin',
             'email' => 'admin@admin.com',
             'password' => 'admin'
-        ])->hasRole('admin');
+        ])->assignRole('admin');
     }
 }
