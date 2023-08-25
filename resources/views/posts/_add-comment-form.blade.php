@@ -18,7 +18,7 @@
         </form>
     </x-panel>
 @else
-    <p class="font-semibold text-blue-500">
+    <p class="font-semibold text-pink-800">
         <a href="/register" class="hover:underline">Register</a> or <a href="/login" class="hover:underline">Login</a> to leave a comment
     </p>
 @endauth

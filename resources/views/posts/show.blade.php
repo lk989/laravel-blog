@@ -22,7 +22,7 @@
                 <div class="col-span-8">
                     <div class="hidden lg:flex justify-between mb-6">
                         <a href="/"\
-                            class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
+                            class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-yellow-700 text-pink-800">
                             <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
                                 <g fill="none" fill-rule="evenodd">
                                     <path stroke="#000" stroke-opacity=".012" stroke-width=".5" d="M21 1v20.16H.84V1z">
@@ -38,11 +38,11 @@
                         <x-category-button :category="$post->category"/>
                     </div>
 
-                    <h1 class="font-bold text-3xl lg:text-4xl mb-10 text-justify">
+                    <h1 class="font-bold text-3xl lg:text-4xl mb-10 text-justify text-yellow-900">
                         {{$post->title}}
                     </h1>
 
-                    <div class="space-y-4 lg:text-lg leading-loose text-justify">
+                    <div class="space-y-4 lg:text-lg leading-loose text-justify text-gray-900">
                         <p>{!! $post->body !!}</p>
                     </div>
                 </div>

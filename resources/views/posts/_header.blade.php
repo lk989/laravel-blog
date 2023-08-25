@@ -1,7 +1,7 @@
 @props(['categories'])
 <header class="max-w-xl mx-auto mt-20 text-center">
-            <h1 class="text-4xl">
-                Latest <span class="text-blue-500">Laravel From Scratch</span> News
+            <h1 class="text-4xl text-yellow-900">
+                Kiwi's Muffins' <span class="text-pink-700">Recipes</span> (;
             </h1>
 
 
@@ -44,7 +44,7 @@
                             type="text"
                             name="search"
                             placeholder="Find something"
-                            class="bg-transparent placeholder-black font-semibold text-sm"
+                            class="bg-transparent placeholder-gray-400 font-semibold text-sm text-pink-800"
                             value="{{request('search')}}">
                     </form>
                 </div>

@@ -13,12 +13,12 @@
     }
 </style>
 
-<body style="font-family: Open Sans, sans-serif">
+<body style="font-family: 'Trebuchet MS', sans-serif">
     <section class="px-6 py-8">
         <nav class="md:flex md:justify-between md:items-center">
             <div>
                 <a href="/">
-                    <img src="/images/logo.svg" alt="Laracasts Logo" width="165" height="16">
+                    <img src="/images/logo.jpeg" alt="Laracasts Logo" width="165" height="16">
                 </a>
             </div>
 
@@ -26,13 +26,13 @@
                 @auth
                 <x-dropdown>
                     <x-slot name="trigger">
-                        <button class="text-xs font-bold uppercase">Welcome back {{auth()->user()->name}} !</button>
+                        <button class="text-xs font-bold uppercase text-yellow-900 hover:text-yellow-700">Welcome back {{auth()->user()->name}} !</button>
                     </x-slot>
                     @role('admin')
-                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">All posts</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New post</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')" class="text-pink-800">All posts</x-dropdown-item>
+                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')" class="text-pink-800">New post</x-dropdown-item>
                     @endrole
-                    <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Logout</x-dropdown-item>
+                    <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()" class="text-pink-800">Logout</x-dropdown-item>
                 </x-dropdown>
 
                     <form id="logout-form" method="POST" action="/logout" class="hidden">
@@ -40,11 +40,11 @@
                     </form>
 
                 @else
-                    <a href="/register" class="text-xs font-bold uppercase">Register</a>
-                    <a href="/login" class="text-xs font-bold uppercase ml-6">login</a>
+                    <a href="/register" class="text-xs font-bold uppercase text-yellow-900 hover:text-yellow-700">Register</a>
+                    <a href="/login" class="text-xs font-bold uppercase ml-6 text-yellow-900 hover:text-yellow-700">login</a>
                 @endauth
 
-                <a href="#newsletter" class="bg-blue-500 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
+                <a href="#newsletter" class="bg-pink-800 hover:bg-pink-700 ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-5">
                     Subscribe for Updates
                 </a>
             </div>
@@ -82,7 +82,7 @@
                         </div>
 
                         <button type="submit"
-                                class="transition-colors duration-300 bg-blue-500 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
+                                class="transition-colors duration-300 bg-pink-800 hover:bg-blue-600 mt-4 lg:mt-0 lg:ml-3 rounded-full text-xs font-semibold text-white uppercase py-3 px-8"
                         >
                             Subscribe
                         </button>

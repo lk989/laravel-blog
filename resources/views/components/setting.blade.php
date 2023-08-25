@@ -11,10 +11,10 @@
                 <h3 class="font-bold mb-4">Links</h3>
                 <ul>
                     <li>
-                        <a href="/admin/posts" class="{{request()->is('admin/posts')? 'text-blue-500' : ''}}">All Posts</a>
+                        <a href="/admin/posts" class="{{request()->is('admin/posts')? 'text-pink-800' : 'text-white'}}">All Posts</a>
                     </li>
                     <li>
-                        <a href="/admin/posts/create" class="{{request()->is('admin/posts/create')? 'text-blue-500' : ''}}">New Post</a>
+                        <a href="/admin/posts/create" class="{{request()->is('admin/posts/create')? 'text-pink-800' : 'text-white'}}">New Post</a>
                     </li>
                 </ul>
             </aside>
